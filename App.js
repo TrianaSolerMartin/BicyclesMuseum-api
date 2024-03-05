@@ -1,5 +1,22 @@
 import connection_db from "./database/connection_db.js";
 import BicycleModel from "./models/BicycleModel.js";
+import  {PORT} from "./config.js"
+import express  from "express";
+import BicycleRouter from "./routers/BicycleRouter.js"
+
+const app = express();
+app.use("/api", BicycleRouter )
+
+try {
+  await connection_db.authenticate();
+  console.log("wE ARE IN CONECTION");
+} catch (error) {
+  console.error('oh oh oh...  we have a problem', error);
+}
+
+app.listen(PORT, () => 
+  console.log(`server up in http://localhost:${PORT}`),
+);
 
 // Función para sincronizar el modelo con la base de datos
 const syncModelWithDatabase = async () => {
