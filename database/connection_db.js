@@ -1,13 +1,10 @@
 import { Sequelize } from "sequelize";
-import dotenv from 'dotenv';
-
-// Cargar variables de entorno desde el archivo .env
-dotenv.config();
+import config from '../config.js';
 
 // Crear conexión a la base de datos utilizando las variables de entorno
-const connection_db = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
-    host: process.env.DB_HOST,
-    dialect: process.env.DB_DIALECT
+const connection_db = new Sequelize(config.dbName, config.dbUser, config.dbPassword, {
+    host: config.dbHost,
+    dialect: config.dbDialect
 });
 
-export default connection_db;
+export default connection_db; 
