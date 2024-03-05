@@ -1,7 +1,13 @@
 import { DataTypes } from 'sequelize';
 import connection_db from '../database/connection_db.js'; 
 
-const Bicycle = connection_db.define('Bicycle', {
+const BicycleModel = connection_db.define('BicycleModel', {
+  id: {
+    type: DataTypes.BIGINT,
+    primaryKey: true,
+    unique: true,
+    allowNull: false // El id no puede ser nulo
+  },
   model: {
     type: DataTypes.STRING(100),
     allowNull: false
@@ -20,6 +26,8 @@ const Bicycle = connection_db.define('Bicycle', {
     type: DataTypes.STRING(255),
     allowNull: false
   }
+}, {
+  tableName: 'bicycles' // Opciones adicionales del modelo
 });
 
-export default Bicycle;
+export default BicycleModel;
