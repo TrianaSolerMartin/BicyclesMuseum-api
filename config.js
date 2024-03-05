@@ -1,14 +1,5 @@
-import dotenv from 'dotenv';
+import 'dotenv/config';
 
-// Cargar variables de entorno desde el archivo .env
-dotenv.config();
-
-const config = {
-    dbName: process.env.DB_NAME,
-    dbUser: process.env.DB_USER,
-    dbPassword: process.env.DB_PASSWORD,
-    dbHost: process.env.DB_HOST,
-    dbDialect: process.env.DB_DIALECT
-};
-
-export default config;
+    export const DB_NAME = process.env.DB_NAME;
+    export const DB_USER = process.env.DB_USER;
+    export const DB_PASSWORD = process.env.DB_PASSWORD;
