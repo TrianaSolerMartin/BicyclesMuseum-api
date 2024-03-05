@@ -1,0 +1,5 @@
+este archivo a de duplicarse y rellenar con el contenido de vuestras variabes sensibles la copia la renombraremos como .env  nos aseguraremos de que se encuentra dentro de gitignore
+
+DB_NAME=
+DB_USER=
+DB_PASSWORD=
