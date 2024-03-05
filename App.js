@@ -9,7 +9,7 @@ const syncModelWithDatabase = async () => {
     console.log('❤ Connection has been established successfully.');
 
     // Sincronizar el modelo con la base de datos
-    await BicycleModel.sync({ alter: true }); // Puedes usar alter: true para que Sequelize haga cambios en la tabla si es necesario
+    await BicycleModel.sync(); // Puedes usar alter: true para que Sequelize haga cambios en la tabla si es necesario
 
     console.log('✨ BicycleModel synchronized successfully.');
   } catch (error) {
