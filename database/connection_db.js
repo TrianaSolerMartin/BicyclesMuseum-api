@@ -8,3 +8,4 @@ const connection_db = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
 });
 
 export default connection_db; 
+

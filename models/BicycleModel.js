@@ -33,3 +33,4 @@ const BicycleModel = connection_db.define('Bicycle', {
 });
 
 export default BicycleModel;
+
