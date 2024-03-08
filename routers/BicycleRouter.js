@@ -1,8 +1,8 @@
-import Express  from "express";
-import {getBicycles} from "../controllers/BicycleController.js"
+import express from 'express';
+import { getAllBicycles } from '../controllers/BicycleController.js';
 
-const router = Express.Router();
+const router = express.Router();
 
-router.get("/", getBicycles);
+router.get('/', getAllBicycles)
 
 export default router;
