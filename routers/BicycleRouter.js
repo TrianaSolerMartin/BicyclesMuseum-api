@@ -1,8 +1,9 @@
 import express from 'express';
 import { getAllBicycles } from '../controllers/BicycleController.js';
 
-const router = express.Router();
+const app = express.Router();
 
-router.get('/', getAllBicycles)
+app.get('/bicycles', getAllBicycles);
+// router.delete('/bicycles/:id', deleteBicycleById);
 
-export default router;
+export default app;

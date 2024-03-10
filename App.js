@@ -9,6 +9,8 @@ const app = express();
 
 app.use('/api', BicycleRouter)
 
+const main = async() => {
+
 try {
   // Autenticar la conexión
   await connection_db.authenticate();
@@ -21,10 +23,15 @@ try {
 } catch (error) {
   console.error('❌ Unable to connect to the database:', error);
 }
-
+}
 app.listen(PORT, () => {
   console.log(`Server up in http://localhost:${PORT}/api`);
 });
+
+main ();
+
+
+
 
 
 
