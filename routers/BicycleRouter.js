@@ -1,9 +1,12 @@
 import express from 'express';
 import { getAllBicycles } from '../controllers/BicycleController.js';
+// import { eliminarRegistro } from '../controllers/BicycleController.js';
 
 const app = express.Router();
 
-app.get('/bicycles', getAllBicycles);
-// router.delete('/bicycles/:id', deleteBicycleById);
+router.get('/', getAllBicycles);
 
-export default app;
+
+// router.delete('/api/:id', eliminarRegistro);
+
+export default router;
