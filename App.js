@@ -10,7 +10,7 @@ const app = express();
 // Rutas de la aplicación
 app.use('/api', BicycleRouter);
 
-const main = async() =>{
+
 // Autenticar la conexión
 try {
   await connection_db.authenticate();
@@ -21,13 +21,12 @@ try {
   console.log('✅ BicycleModel has been synchronized with the database.');
 } catch (error) {
   console.error('❌ Unable to connect to the database:', error);
-}}
-
+}
 app.listen(PORT, () => {
   console.log(`💚 Connected to port ${PORT}`);
 }).on('error', (error) => {
   console.log('Error al iniciar el servidor:', error.message);
 });
 
-main();
+
 

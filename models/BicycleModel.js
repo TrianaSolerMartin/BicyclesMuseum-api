@@ -2,7 +2,7 @@ import { DataTypes } from 'sequelize';
 import connection_db from '../database/connection_db.js'
 
 
-const BicycleModel = connection_db.define('Bic', {
+const BicycleModel = connection_db.define('Bicyclem', {
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -26,8 +26,12 @@ const BicycleModel = connection_db.define('Bic', {
     image: {
         type: DataTypes.STRING,
         allowNull: false
-    } 
-});
+    }
+}, {
+        tableName: 'bicyclesm', //Nombre de la tabla en la base de datos.
+        timestamps: false //Para deshabilitar los campos createdAt y updatedAt.
+}); 
+
 
 export default BicycleModel;
 
