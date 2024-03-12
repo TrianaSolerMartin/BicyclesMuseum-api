@@ -5,6 +5,7 @@
   "main": "App.js",
   "type": "module",
   "scripts": {
+    "api": "npx json-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
