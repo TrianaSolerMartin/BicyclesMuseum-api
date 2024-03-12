@@ -50,5 +50,22 @@ export const createBicycle = async (request, response) => {
 };
 
 export const updateBicycle = async (request, response) => {
+    const {id} = request.params;
+    const{model,speed,frame,electric,image} = request.body;
+
+    try {
+        const bicycle = await BicycleModel.findByPk(id);
+        await bicycle.update({
+            model,
+            speed,
+            frame,
+            electric,
+            image});
+
+        response.status(200).json({ success: true, data: bicycle, message: 'Bicicleta actualizada con éxito'});
     
+    } catch (error) {
+        console.error('Error al crear la bicicleta:', error);
+        response.status(500).json({ success: false, error: 'Error interno del servidor' });  
+    }
 }
