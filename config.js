@@ -5,4 +5,3 @@ import 'dotenv/config';
     export const DB_PASSWORD = process.env.DB_PASSWORD;
     export const PORT = process.env.PORT || 5000;
 
-    
