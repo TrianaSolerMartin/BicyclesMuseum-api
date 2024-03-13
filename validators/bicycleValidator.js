@@ -2,6 +2,7 @@ import { check } from 'express-validator';
 import { validateResult } from '../helpers/validateHelper.js';
 
 export const validateCreate = [
+
     check('model')
         .exists()
         .notEmpty(),
