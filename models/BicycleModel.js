@@ -11,21 +11,22 @@ const BicycleModel = connection_db.define('Bicycle', {
     },
     model: {
         type: DataTypes.STRING(100),
-        
+        allowNull: false
     },
     speeds: {
         type: DataTypes.INTEGER,
+        
     },
     frame: {
         type: DataTypes.STRING(100),
-        
+        allowNull: false
     },
     electric: {
         type: DataTypes.BOOLEAN,
     },
     image: {
         type: DataTypes.STRING,
-        
+        allowNull: false
     } 
 }, {
     tableName: 'bicycles', //Nombre de la tabla en la base de datos.
