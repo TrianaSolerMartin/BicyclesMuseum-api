@@ -15,7 +15,7 @@ const BicycleModel = connection_db.define('Bicycle', {
     },
     speeds: {
         type: DataTypes.INTEGER,
-        
+        allowNull: false
     },
     frame: {
         type: DataTypes.STRING(100),

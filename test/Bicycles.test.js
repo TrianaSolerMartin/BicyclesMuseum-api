@@ -1,6 +1,7 @@
 import require  from 'express';
 import request from 'supertest';
 import { app } from '../App.js'; 
+import connection_db from '../database/connection_db.js';
 
 const api = request(app); //request nos permite hacer solicitudes a la app
 
@@ -10,7 +11,6 @@ describe('Testing CRUD Posters', () => {
         const response = await api.get('/api');
         expect(Array.isArray(response.body)).toBe(true); //que objeto quiero recibir, modificar
         expect(response.status).toBe(200);
-        });
     });
 
     test('Post response should be an object and return status 201', async() => {
@@ -24,3 +24,10 @@ describe('Testing CRUD Posters', () => {
             expect(typeof response.body).toBe("object");
             expect(response.status).toBe(201);
     })
+
+    afterAll(async () => {
+        await connection_db.sync({ force: true });
+        console.log('Every table is deleted')
+    })
+
+})
