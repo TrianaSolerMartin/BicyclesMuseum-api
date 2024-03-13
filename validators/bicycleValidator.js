@@ -1,7 +1,7 @@
 import { check } from 'express-validator';
 import { validateResult } from '../helpers/validateHelper.js';
 
-export const validateCreate = [
+export const validateCreateBicycle = [
     check('model')
         .exists()
         .notEmpty(),
@@ -9,7 +9,7 @@ export const validateCreate = [
     check('speeds')
         .exists()
         .notEmpty()
-        .isInt({ min: 1, max: 8 }),
+        .isInt({ min: 1, max: 30 }).withMessage("The speeds must be between 1 and 30"),
     
     check('frame') // Corregido aquí
         .exists()
