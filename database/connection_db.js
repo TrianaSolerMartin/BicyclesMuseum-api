@@ -1,8 +1,8 @@
 import { Sequelize } from "sequelize";
-import {DB_NAME, DB_USER, DB_PASSWORD} from '../config.js';
+import {DB_DEV_NAME, DB_DEV_USER, DB_PASSWORD} from '../config.js';
 
 // Crear conexión a la base de datos utilizando las variables de entorno
-const connection_db = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
+const connection_db = new Sequelize(DB_DEV_NAME, DB_DEV_USER, DB_PASSWORD, {
     host: 'localhost',
     dialect: "mysql"
 });

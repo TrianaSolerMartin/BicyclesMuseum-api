@@ -1,7 +1,7 @@
 import { check } from 'express-validator';
 import { validateResult } from '../helpers/validateHelper.js';
 
-export const validateCreate = [
+export const bicycleValidator = [
     check('model')
         .exists()
         .notEmpty(),
@@ -9,9 +9,9 @@ export const validateCreate = [
     check('speeds')
         .exists()
         .notEmpty()
-        .isInt({ min: 1, max: 8 }),
+        .isInt({ min: 1, max: 33 }),
     
-    check('frame') // Corregido aquí
+    check('frame') 
         .exists()
         .notEmpty(),
     
@@ -27,3 +27,4 @@ export const validateCreate = [
         validateResult(req, res, next)
     } 
 ];
+export default bicycleValidator;
