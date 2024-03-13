@@ -1,12 +1,15 @@
 import express from 'express';
-import { getAllBicycles } from '../controllers/BicycleController.js';
-// import { eliminarRegistro } from '../controllers/BicycleController.js';
+import { createBicycle, deleteBicycle, getAllBicycles, updateBicycle } from '../controllers/BicycleController.js';
 
-const app = express.Router();
+
+const router = express.Router();
 
 router.get('/', getAllBicycles);
 
+router.delete('/:id', deleteBicycle);
 
-// router.delete('/api/:id', eliminarRegistro);
+router.post('/', createBicycle);
+
+router.put('/:id', updateBicycle);
 
 export default router;
