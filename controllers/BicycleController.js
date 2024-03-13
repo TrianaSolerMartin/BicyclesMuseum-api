@@ -49,4 +49,17 @@ export const updateBicycle = async (request, response) => {
       console.error('Error al crear la bicicleta:', error);
       response.status(500).json({ success: false, error: 'Error interno del servidor' });  
     }
+    test('Should create bicycle', async () =>{
+      const response =  await api.post('/api').send({
+               "model": "test",
+               "speeds": "2",
+               "frame": "test",
+               "electric": "0",
+               "image": "www.wikipedis.com"
+         })
+      expect(typeof response.body).toBe('object');
+      expect(response.status).toBe(201)
+  })
 }
+
+

@@ -11,15 +11,15 @@ describe('Testing crud bicycle', () =>{
         expect(Array.isArray(response.body)).toBe(true);
         expect(response.status).toBe(200)
     })
-    //     test('Should create bicycle', async () =>{
-    //     const response =  await api.post('/api').send({
-    //              "model": "test",
-    //              "speeds": "2",
-    //              "frame": "test",
-    //              "electric": "0",
-    //              "image": "www.wikipedis.com"
-    //        })
-    //     expect(typeof response.body).toBe('object');
-    //     expect(response.status).toBe(201)
-    // })
+        test('Should create bicycle', async () =>{
+        const response =  await api.post('/api').send({
+                 "model": "test",
+                 "speeds": "2",
+                 "frame": "test",
+                 "electric": "0",
+                 "image": "www.wikipedis.com"
+           })
+        expect(typeof response.body).toBe('object');
+        expect(response.status).toBe(201)
+    })
 })
