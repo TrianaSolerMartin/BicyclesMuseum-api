@@ -11,7 +11,7 @@ export const validateCreateBicycle = [
         .notEmpty()
         .isInt({ min: 1, max: 30 }).withMessage("The speeds must be between 1 and 30"),
     
-    check('frame') // Corregido aquí
+    check('frame')
         .exists()
         .notEmpty(),
     

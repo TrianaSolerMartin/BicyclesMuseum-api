@@ -1,11 +1,11 @@
 import require  from 'express';
 import request from 'supertest';
-import { app } from '../App.js'; 
+import { app, server } from '../App.js'; 
 import connection_db from '../database/connection_db.js';
 
 const api = request(app); //request nos permite hacer solicitudes a la app
 
-describe('Testing CRUD Posters', () => {
+describe('Testing CRUD Bicycles', () => {
 
     test("Response body must be an array and then show 200 status", async()=>{
         const response = await api.get('/api');
@@ -16,18 +16,17 @@ describe('Testing CRUD Posters', () => {
     test('Post response should be an object and return status 201', async() => {
         const response = await api.post('/api').send({
             "model": "Test",
-            "speeds": 5,
+            "speeds": "5",
             "frame": "test",
-            "electric": false,
-            "image": "test"
+            "electric": "1",
+            "image": "www.wikipedia.com"
             });
             expect(typeof response.body).toBe("object");
             expect(response.status).toBe(201);
     })
 
-    afterAll(async () => {
-        await connection_db.sync({ force: true });
-        console.log('Every table is deleted')
-    })
-
+    afterAll( () => {
+        connection_db.close();
+        server.close();
+    });
 })
