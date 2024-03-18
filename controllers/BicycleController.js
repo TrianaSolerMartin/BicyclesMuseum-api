@@ -53,3 +53,20 @@ export const updateBicycle = async (request, response) => {
     response.status(500).json({ success: false, error: 'Error interno del servidor' });  
   }
 }
+
+export const getOneBicycle = async (request, response) => {
+  const { id } = request.params;
+
+  try {
+    const bicycle = await BicycleModel.findByPk(id);
+
+    if (!bicycle) {
+      return response.status(404).json({ success: false, error: 'Bicicleta no encontrada' });
+    }
+
+    response.status(200).json({ success: true, data: bicycle });
+  } catch (error) {
+    console.error('Error al obtener la bicicleta:', error);
+    response.status(500).json({ success: false, error: 'Error interno del servidor' });
+  }
+};
