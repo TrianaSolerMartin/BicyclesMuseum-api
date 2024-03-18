@@ -8,10 +8,10 @@ const app = express();
 // Usar el controlador getAllBicycles como middleware en una ruta de prueba
 app.get('/', getAllBicycles);
 
-describe('GET /', () => {
+describe('GET /api', () => {
  it('debería devolver un array de bicicletas', async () => {
     // Simular una solicitud GET a la ruta '/'
-    const response = await request(app).get('/');
+    const response = await request(app).get('/api');
 
     // Verificar que el estado de la respuesta es 200
     expect(response.status).toBe(200);
@@ -28,7 +28,7 @@ describe('GET /', () => {
     // o usar un mock para simular el comportamiento de BicycleModel.findAll()
 
     // Simular una solicitud GET a la ruta '/'
-    const response = await request(app).get('/');
+    const response = await request(app).get('/api');
 
     // Verificar que el estado de la respuesta es 500
     expect(response.status).toBe(500);

@@ -27,4 +27,3 @@ export const bicycleValidator = [
         validateResult(req, res, next)
     } 
 ];
-export default bicycleValidator;
