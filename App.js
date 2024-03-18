@@ -5,7 +5,7 @@ import { PORT } from "./config.js";
 import BicycleRouter from './routers/BicycleRouter.js'
 
 
-const app = express();
+export const app = express();
 
 app.use('/api', BicycleRouter)
 
@@ -22,7 +22,7 @@ try {
   console.error('❌ Unable to connect to the database:', error);
 }
 
-app.listen(PORT, () => {
+export const server = app.listen(PORT, () => {
   console.log(`Server up in http://localhost:${PORT}/api`);
 });
 
