@@ -36,7 +36,7 @@ export const createBicycle = async (request, response) => {
           response.status(500).json({ success: false, error: 'Error interno del servidor' });
         }
 }
- 
+
 
 export const updateBicycle = async (request, response) => {
   const {id} = request.params;
