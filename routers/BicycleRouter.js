@@ -12,6 +12,6 @@ router.post('/', validateCreateBicycle, createBicycle);
 
 router.put('/:id', updateBicycle);
 
-router.getOne('/:id', getOneBicycle);
+router.get('/:id', getOneBicycle);
 
 export default router;
