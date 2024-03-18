@@ -5,7 +5,10 @@ import { PORT } from "./config.js";
 import BicycleRouter from './routers/BicycleRouter.js'
 
 
+
 export const app = express();
+
+app.use(express.json())
 
 app.use('/api', BicycleRouter)
 
