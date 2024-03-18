@@ -9,29 +9,61 @@ export const getAllBicycles = async (request, response) => {
         response.status(500).json({message: error.message})
     }
 }
+export const deleteBicycle = async (request, response) => {
+        const {id} = request.params
+    try {
+        const bicycle = await BicycleModel.findByPk(id);
+        if (!bicycle) {
+            return response.status(404).json({ success: false, error: 'Bicicleta no encontrada' });
+          }
+            await bicycle.destroy();
+      
+          response.status(200).json({ success: true, message: 'Bicicleta eliminada con éxito' });
+        } catch (error) {
+          console.error('Error al eliminar bicicleta:', error);
+          response.status(500).json({ success: false, error: 'Error interno del servidor' });
+        }
+}
+export const createBicycle = async (request, response) => {
+    try {
+        const newBicycle = await BicycleModel.create(request.body)
 
-export const eliminarRegistro = (req, res) => {
-    const id = req.params.id;
-    const sql = 'DELETE FROM tu_tabla WHERE id = ?';
-    connection.query(sql, [id], (err, result) => {
-      if (err) {
-        console.error('Error al eliminar el registro:', err);
-        res.status(500).json({ error: 'Error interno del servidor' });
-        return;
-      }
-  
-      if (result.affectedRows > 0) {
-        res.json({ mensaje: 'Registro eliminado correctamente' });
-      } else {
-        res.status(404).json({ error: 'No se encontró el registro con el ID proporcionado' });
-      }
-    });
-  };
-  
-  process.on('SIGINT', () => {
-    connection.end();
-  });
-  
-  
-  
+        response.status(201).json({ success: true, data: newBicycle, message: 'Bicicleta creada con éxito' });
+        } catch (error) {
+          console.error('Error al crear la bicicleta:', error);
+          response.status(500).json({ success: false, error: 'Error interno del servidor' });
+        }
+}
+export const updateBicycle = async (request, response) => {
+    const {id} = request.params;
+    const{model,speed,frame,electric,image} = request.body;
 
+    try {
+      const bicycle = await BicycleModel.findByPk(id);
+      await bicycle.update({model,speed,frame,electric,image});
+
+      response.status(200).json({ success: true, data: bicycle, message: 'Bicicleta actualizada con éxito'});
+    
+    } catch (error) {
+      console.error('Error al crear la bicicleta:', error);
+      response.status(500).json({ success: false, error: 'Error interno del servidor' });  
+    }
+}
+
+
+export const getOneBicycle = async (request, response) => {
+  const { id } = request.params;
+
+  try {
+    const bicycle = await BicycleModel.findByPk(id);
+
+    if (!bicycle) {
+      return response.status(404).json({ success: false, error: 'Bicicleta no encontrada' });
+    }
+
+    response.status(200).json({ success: true, data: bicycle });
+  } catch (error) {
+    console.error('Error al obtener la bicicleta:', error);
+    response.status(500).json({ success: false, error: 'Error interno del servidor' });
+  }
+};
