@@ -1,13 +1,14 @@
 import connection_db from "./database/connection_db.js";
 import BicycleModel from "./models/BicycleModel.js";
 import express from 'express';
-import {PORT} from "./config.js";
-import BicycleRouter from './routers/BicycleRouter.js';
+import { PORT } from "./config.js";
+import BicycleRouter from './routers/BicycleRouter.js'
+
+
 
 export const app = express();
 
-app.use(express.json());
-
+app.use(express.json())
 
 app.use('/api', BicycleRouter)
 
@@ -24,6 +25,9 @@ try {
   console.error('❌ Unable to connect to the database:', error);
 }
 
-app.listen(PORT, () => {
+export const server = app.listen(PORT, () => {
   console.log(`Server up in http://localhost:${PORT}/api`);
 });
+
+
+
