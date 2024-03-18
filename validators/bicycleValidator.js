@@ -1,5 +1,5 @@
-import { check } from 'express-validator';
-import { validateResult } from '../helpers/validateHelper.js';
+// import { check } from 'express-validator';
+// import { validateResult } from '../helpers/validateHelper.js';
 
 export const bicycleValidator = [
     check('model')
@@ -15,13 +15,13 @@ export const bicycleValidator = [
         .exists()
         .notEmpty(),
     
-    check('electric')
-        .exists()
-        .notEmpty(),
+//     check('electric')
+//         .exists()
+//         .notEmpty(),
     
-    check('image')
-        .exists()
-        .notEmpty(), 
+//     check('image')
+//         .exists()
+//         .notEmpty(), 
         
     (req, res, next) => {
         validateResult(req, res, next)

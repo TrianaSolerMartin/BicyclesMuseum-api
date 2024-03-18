@@ -1,8 +1,12 @@
 import 'dotenv/config';
 
     export const DB_DEV_NAME = process.env.DB_DEV_NAME;
+<<<<<<< HEAD
     export const DB_DEV_USER = process.env.DB_DEV_USER;
+=======
+    export const DB_USER = process.env.DB_USER;
+>>>>>>> develop
     export const DB_PASSWORD = process.env.DB_PASSWORD;
-    export const PORT = process.env.PORT || 3000;
-
-    
+    export const PORT = process.env.PORT || 5000;
+    export const DB_TEST_NAME = process.env.DB_TEST_NAME;
+    export const NODE_ENV = process.env.NODE_ENV;
