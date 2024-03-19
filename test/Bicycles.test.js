@@ -16,11 +16,11 @@ describe('Testing CRUD Bicycles', () => {
 
     test('Post response should be an object and return status 201', async() => {
         const response = await api.post('/api').send({
-            "model": "Test",
-            "speeds": "5",
-            "frame": "test",
-            "electric": "1",
-            "image": "www.wikipedia.com"
+                "model": "Test",
+                "speeds": "5",
+                "frame": "test",
+                "electric": "1",
+                "image": "www.test.com"
             });
             expect(typeof response.body).toBe("object");
             expect(response.status).toBe(201);
@@ -46,7 +46,15 @@ describe('Testing CRUD Bicycles', () => {
             expect(response.headers['content-type']).toContain('json');
         });
 
-        
+        // test('should return a message bicycle deleted successfully', async () => {
+        //     expect(response.body.message).toContain("Bicycle has been delete successfully!");
+        //     const findBicycle = await BicycleModel.findByPk(id);
+        //     expect(findBicycle).toBeNull();
+        // })
+
+        afterAll(async() =>{
+            await BicycleModel.destroy({where:{ id: createdBicycle.id}})
+        })
     })
 
     afterAll( () => {
