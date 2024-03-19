@@ -28,10 +28,6 @@ try {
 export const server = app.listen(PORT, () => {
   console.log(`Server up in http://localhost:${PORT}/api`);
 });
-<<<<<<< HEAD
-export default app;
-=======
 
 
 
->>>>>>> develop
