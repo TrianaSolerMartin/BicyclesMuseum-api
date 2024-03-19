@@ -1,5 +1,5 @@
 import { Sequelize } from "sequelize";
-import {DB_DEV_NAME, DB_USER, DB_PASSWORD, DB_TEST_NAME, NODE_ENV} from '../config.js';
+import {DB_NAME, DB_DEV_USER, DB_PASSWORD, DB_TEST_NAME, NODE_ENV} from '../config.js';
 
 const DB_NAME = NODE_ENV === 'test' ? DB_TEST_NAME : DB_DEV_NAME; //Condición: Elige una bbdd u otra (la de bicicletas o la de test) "? equivale a if" y ": equivale a else"
 
