@@ -48,7 +48,7 @@ describe('Testing CRUD Bicycles', () => {
 
         // test('should return a message bicycle deleted successfully', async () => {
         //     expect(response.body.message).toContain("Bicycle has been delete successfully!");
-        //     const findBicycle = await BicycleModel.findByPk(id);
+        //     const findBicycle = await BicycleModel.findOne({where:{ id: createdBicycle.id}});
         //     expect(findBicycle).toBeNull();
         // })
 
