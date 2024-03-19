@@ -28,5 +28,5 @@ describe('Testing CRUD Bicycles', () => {
     afterAll( () => {
         connection_db.close();
         server.close();
-    });
+    });
 })
