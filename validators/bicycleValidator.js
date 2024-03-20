@@ -27,8 +27,6 @@ export const validateCreateBicycle = [
         validateResult(req, res, next)
     } 
 ];
-<<<<<<< HEAD
-=======
 
 export const validateUpdateBicycle = [
     check('model')
@@ -56,4 +54,3 @@ export const validateUpdateBicycle = [
         validateResult(req, res, next)
     } 
 ];
->>>>>>> develop

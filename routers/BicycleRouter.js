@@ -10,11 +10,7 @@ router.delete('/:id', deleteBicycle);
 
 router.post('/', validateCreateBicycle, createBicycle);
 
-<<<<<<< HEAD
-router.put('/:id', bicycleValidator, updateBicycle);
-=======
 router.put('/:id', validateUpdateBicycle, updateBicycle);
->>>>>>> develop
 
 router.get('/:id', getOneBicycle);
 
