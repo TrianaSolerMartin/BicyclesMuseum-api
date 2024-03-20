@@ -32,7 +32,7 @@ Para comenzar a explorar este maravilloso back-end del Museo de bicicletas en tu
 1. **Clona el siguiente repositorio**
    
    ```bash
-   git clone <URL_del_repositorio>
+   git clone https://github.com/TrianaSolerMartin/BicyclesMuseum-api.git
 
 **Las dependencias instaladas:**
 
@@ -67,7 +67,9 @@ Una vez que la aplicación esté instalada y ejecutándose, puedes hacer lo sigu
 
 Las tecnologías principales que hemos utilizado para desarrollar esta aplicación web:
 
+<p align="center">  
 MySQL - Express - Nodemond - Cors - Supertest - Jest 
+</p>
 
 # Organización del Proyecto
 
