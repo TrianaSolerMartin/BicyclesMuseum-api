@@ -23,7 +23,7 @@
 
 ## Descripción
 
-Tomando como referencia nuestro antiguo proyecto Museo de Bicicletas que es una aplicación web desarrollada con React que permite sumergirse en el fascinante mundo de las bicicletas. Con una interfaz intuitiva y atractiva, pudiendo explorar diferentes modelos, agregar nuevos ejemplares, editar detalles y eliminar modelos existentes. Hemos decidido utilizar para el almacenamiento de datos SQL, NODE y Express.
+Tomando como referencia nuestro proyecto "Museo de Bicicletas" que es una aplicación web desarrollada con React, que te traslada al fascinante mundo de las bicicletas, hemos desarrollado nuestra API para el almacenamiento de datos con MySQL, NODE y Express, entre otras tecnologías, para un mejor manejo de errores (con Jest y Supertest).
 
 ## Instalación
 
@@ -143,6 +143,6 @@ El proyecto backend está organizado de la siguiente manera:
 
 ## Contacto
 
-Si tienes alguna pregunta o sugerencia sobre el proyecto, no dudes en ponerte en contacto con nosotros por correo electrónico o a través de nuestras redes sociales. ¡Esperamos que disfrutes explorando el Museo de Bicicletas!
+Si tienes alguna pregunta o sugerencia sobre el proyecto, no dudes en ponerte en contacto con nosotros por correo electrónico o a través de nuestras redes sociales. ¡Esperamos que disfrutes explorando el Museo de Bicicletas!.
 
 ¡Gracias por tu interés y apoyo! Pedalea con nosotros hacia un futuro lleno de aventuras en dos ruedas. 🚲✨
