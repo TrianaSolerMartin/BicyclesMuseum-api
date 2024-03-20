@@ -1,32 +1,50 @@
-import require  from 'express';
-import request from 'supertest';
-import { app, server } from '../App.js'; 
-import connection_db from '../database/connection_db.js';
+import request from "supertest";
+import { app } from '../App.js';
 
-const api = request(app); //request nos permite hacer solicitudes a la app
+const api = request(app);
 
-describe('Testing CRUD Bicycles', () => {
+describe('Testing CRUD bicycle', () => {
 
-    test("Response body must be an array and then show 200 status", async()=>{
+    test('GET /api', async () => {
         const response = await api.get('/api');
-        expect(Array.isArray(response.body)).toBe(true); //que objeto quiero recibir, modificar
+        expect(Array.isArray(response.body)).toBe(true);
         expect(response.status).toBe(200);
     });
 
-    test('Post response should be an object and return status 201', async() => {
+    test('POST /api', async () => {
         const response = await api.post('/api').send({
-            "model": "Test",
-            "speeds": "5",
+            "model": "test",
+            "speed": "2",
             "frame": "test",
-            "electric": "1",
+            "electric": "0",
             "image": "www.wikipedia.com"
-            });
-            expect(typeof response.body).toBe("object");
-            expect(response.status).toBe(201);
-    })
-
-    afterAll( () => {
-        connection_db.close();
-        server.close();
+        });
+        expect(typeof response.body).toBe('object');
+        expect(response.status).toBe(201);
     });
-})
+
+    test('GETONE /api/:id', async () => {
+        const response = await api.get('/api/2'); 
+        expect(typeof response.body).toBe('object');
+        expect(response.status).toBe(200);
+    });
+
+    test('PUT /api/:id', async () => {
+        const response = await api.put('/api/3').send({
+            "model": "updatedTest",
+            "speed": 3,
+            "frame": "updatedTest",
+            "electric": false,
+            "image": "www.updatedwikipedia.com"
+        });
+        expect(typeof response.body).toBe('object');
+        expect(response.status).toBe(200);
+    });
+
+    test('DELETE /api/id', async () => {
+        const response = await api.delete('/api/id'); 
+        expect(typeof response.body).toBe('object');
+        expect(response.status).toBe(200);
+    });
+
+});
