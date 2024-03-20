@@ -3,19 +3,16 @@
 </div>
 
 <p align="center">
-  <a href="https://github.com/JnogueraGonzalez/">
-    <img src="https://img.icons8.com/ios-filled/30/000000/github.png" alt="Jessica Noguera">Jessica Noguera
+  <a href="https://github.com/RaquelLores">
+    <img src="https://img.icons8.com/ios-filled/30/000000/github.png" alt="Raquel Lores">Raquel Lores
   </a>
-  <a href="https://github.com/pointfs">
-    <img src="https://img.icons8.com/ios-filled/30/000000/github.png" alt="Fatima Cosme">Fatima Cosme
+  <a href="https://github.com/albamartinmz">
+    <img src="https://img.icons8.com/ios-filled/30/000000/github.png" alt="Alba Martín">Alba Martín
   </a>
-  <a href="https://github.com/SarayAnta">
-    <img src="https://img.icons8.com/ios-filled/30/000000/github.png" alt="Saray Rodriguez">Saray Rodriguez
+  <a href="https://github.com/BeatrizCPerez">
+    <img src="https://img.icons8.com/ios-filled/30/000000/github.png" alt="Beatriz Pérez">Beatriz Pérez
   </a>
-  <a href="https://github.com/elenalope">
-    <img src="https://img.icons8.com/ios-filled/30/000000/github.png" alt="Elena López">Elena López
-  </a>
-  <a href="https://github.com/TrianaSolerMartín">
+  <a href="https://github.com/TrianaSolerMartin">
     <img src="https://img.icons8.com/ios-filled/30/000000/github.png" alt="Triana Soler Martín">Triana Soler Martín
   </a>
 </p>
@@ -26,119 +23,105 @@
 
 ## Descripción
 
-El Museo de Bicicletas es una aplicación web desarrollada con React que te permite sumergirte en el fascinante mundo de las bicicletas. Con una interfaz intuitiva y atractiva, podrás explorar diferentes modelos, agregar nuevos ejemplares, editar detalles y eliminar modelos existentes. Además, podrás disfrutar de una galería de imágenes relacionadas con el ciclismo que te inspirarán a rodar.
+Tomando como referencia nuestro antiguo proyecto Museo de Bicicletas que es una aplicación web desarrollada con React que permite sumergirse en el fascinante mundo de las bicicletas. Con una interfaz intuitiva y atractiva, pudiendo explorar diferentes modelos, agregar nuevos ejemplares, editar detalles y eliminar modelos existentes. Hemos decidido utilizar para el almacenamiento de datos SQL, NODE y Express.
 
 ## Instalación
 
-Para comenzar a explorar el Museo de Bicicletas en tu propio entorno, sigue estos sencillos pasos:
+Para comenzar a explorar este maravilloso back-end del Museo de bicicletas en tu propio entorno, sigue estos sencillos pasos:
 
-1. **Clona el Repositorio:**
+1. **Clona el siguiente repositorio**
+   
+   ```bash
+   git clone <URL_del_repositorio>
 
-    ```bash
-    git clone https://github.com/SarayAnta/proyecto05-museo
-    ```
+**Las dependencias instaladas:**
 
-2. **Instala las Dependencias:**
+```npm install cors@^2.8.5```
 
-    ```bash
-npm init -y
-    ```
+npm install cross-env@^7.0.3
 
-3. **Inicia la Aplicación:**
+npm install dotenv@^16.4.5
 
-    ```bash
-npm i express
-    ```
-        ```bash
-npm i mysql2
-    ```
+npm install express@^4.18.3
 
-    La aplicación estará disponible en [http://localhost:5173/](http://localhost:5173/)
+npm install express-validator@^7.0.1
+npm install jest@^29.7.0
+
+npm install mysql2@^3.9.2
+
+npm install sequelize@^6.37.1
+
+npm install supertest@^6.3.4
+
+La aplicación estará disponible en http://localhost:5173/
 
 ## Uso
 
 Una vez que la aplicación esté instalada y ejecutándose, puedes hacer lo siguiente:
 
-- Explorar modelos de bicicletas: Navega por la página de inicio para ver todos los modelos de bicicletas disponibles.
-- Agregar una nueva bicicleta: Haz clic en el botón "Añadir Bicicleta" para agregar un nuevo modelo de bicicleta al museo.
-- Editar una bicicleta existente: Haz clic en el botón "Editar" junto a un modelo de bicicleta para editar sus detalles.
-- Eliminar una bicicleta: Haz clic en el botón "Eliminar" junto a un modelo de bicicleta para eliminarlo del museo.
-- Explorar la galería de imágenes: Visita la sección de la galería para ver imágenes relacionadas con el ciclismo.
+- Para comprobar la funcionalidad del metodo CRUD en nuestro proyecto, hemos decidido hacer uso de POSTMAN cuya documentación podrás encontrar en el siguiente enlace:
+ https://documenter.getpostman.com/view/32563763/2sA2xpTpeU
 
 ## Tecnologías Utilizadas
 
 Las tecnologías principales que hemos utilizado para desarrollar esta aplicación web:
 
-React - React Router - Styled Components - Fetch API - Vite - Jest 
+MySQL - Express - Nodemond - Cors - Supertest - Jest 
 
 # Organización del Proyecto
 
 El proyecto está estructurado de la siguiente manera:
 
-|-- src/
-|   |-- assets/
-|   |   |-- img/
-|   |   |   |-- Gallery1.png
-|   |   |   |-- BackgroundHome.png
-|   |   |   |-- ...
-|   |   |
-|   |   |-- sound/
-|   |       |-- 7TSW2M4-bicycle-bell.mp3
-|   |       |-- ...
+|-- controllers/
+|   |-- BicycleController.js/
 |   |
-|   |-- components/
-|   |   |-- add-button/
-|   |   |   |-- AddButton.jsx
+|-- database/
+|   |-- connection_db.js/
 |   |   |
-|   |   |-- card/
-|   |   |   |-- Card.jsx
+|-- helpers/
+|   |-- ValidateHelper.js/
 |   |   |
-|   |   |-- edit/
-|   |   |   |-- Edit.jsx
+|-- Model/
+|   |--BicycleModel.js
 |   |   |
-|   |   |-- footer/
-|   |   |   |-- Footer.jsx
-|   |   |
-|   |   |-- gallery/
-|   |   |   |-- Gallery.jsx
-|   |   |
-|   |   |-- home/
-|   |   |   |-- Home.jsx
-|   |   |
-|   |   |-- layout/
-|   |   |   |-- LayoutPublic.jsx
-|   |   |
-|   |   |-- like-button/          
-|   |   |   |-- LikeButton.jsx
-|   |   |
-|   |   |-- nav/
-|   |   |   |-- Nav.jsx
-|   |   |
-|   |   |-- new-item/            
-|   |       |-- NewItem.jsx
+|-- router/
+|   |-- router.js
 |   |
-|   |-- router/
-|   |   |-- router.jsx
-|   |
-|   |-- services/
-|   |   |-- service.js
-|   |
-|   |-- index.html
-|   |-- index.js
-|
 |-- test/
-|   |-- Footer.test.jsx
-|   |-- Home.test.jsx
-|   |-- Nav.test.jsx
+|   |-- Bicycles.test.js
+|
+|--validators/
+|   |-- bicycleValidator.js
+|   
+| -- App.js
+| -- config.js
 
 ## Estructurado:
 
-El proyecto esta estructurado de la siguiente manera:
-1. src/: Contiene todos los archivos fuente de la aplicación.
-2. components/: Contiene los componentes de React utilizados en la aplicación, como Home, NewItem, Edit, Footer, Gallery, Card, etc.
-3. services/: Contiene los archivos que gestionan las llamadas a la API para obtener, añadir, editar y eliminar bicicletas. como getBicycles, addBicycle, deleteBicycle, updateItem, etc.
-4. assets/: Contiene archivos estáticos como imágenes, fuentes, y sonidos utilizados en la aplicación.
-5. router/: Contiene el enrutador de la aplicación que mapea las rutas a los componentes correspondientes.
+
+El proyecto backend está organizado de la siguiente manera:
+
+- **controladores/**
+  - `BicycleController.js`: Archivo que contiene la lógica para manejar las acciones relacionadas con las bicicletas.
+    - **base de datos/**
+      - `conexión_db.js`: Archivo que establece la conexión con la base de datos.
+  - **ayudantes/**
+    - `ValidateHelper.js`: Archivo con funciones de validación útiles.
+
+- **Modelo/**
+  - `BicycleModel.js`: Define la estructura y el comportamiento de los objetos de bicicleta en la aplicación.
+
+- **enrutador/**
+  - `enrutador.js`: Define las rutas y la lógica de enrutamiento de la aplicación.
+
+- **prueba/**
+  - `Bicicletas.test.js`: Archivo de prueba con casos de prueba para las funciones relacionadas con las bicicletas.
+
+- **validadores/**
+  - `bicicletaValidator.js`: Archivo con funciones para validar datos específicos de las bicicletas.
+
+- `App.js`: Archivo principal de la aplicación.
+- `config.js`: Archivo de configuración que contiene variables de configuración para la aplicación.
 
 ## Código
 
