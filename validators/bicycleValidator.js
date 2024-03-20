@@ -27,3 +27,33 @@ export const validateCreateBicycle = [
         validateResult(req, res, next)
     } 
 ];
+<<<<<<< HEAD
+=======
+
+export const validateUpdateBicycle = [
+    check('model')
+        .exists()
+        .notEmpty(),
+    
+    check('speeds')
+        .exists()
+        .notEmpty()
+        .isInt({ min: 1, max: 30 }).withMessage("The speeds must be between 1 and 30"),
+    
+    check('frame')
+        .exists()
+        .notEmpty(),
+    
+    check('electric')
+        .exists()
+        .notEmpty(),
+    
+    check('image')
+        .exists()
+        .notEmpty(), 
+        
+    (req, res, next) => {
+        validateResult(req, res, next)
+    } 
+];
+>>>>>>> develop

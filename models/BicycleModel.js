@@ -1,13 +1,12 @@
 import { DataTypes } from 'sequelize';
-import connection_db from '../database/connection_db.js'
-
+import connection_db from '../database/connection_db.js';
 
 const BicycleModel = connection_db.define('Bicycle', {
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
-        unique: true, //nos permite filtrar para que los datos no se puedan duplicar
+        unique: true,
     },
     model: {
         type: DataTypes.STRING(100),
@@ -25,12 +24,12 @@ const BicycleModel = connection_db.define('Bicycle', {
         type: DataTypes.BOOLEAN,
     },
     image: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING, // Debería ser suficientemente grande para almacenar la URL de la imagen
         allowNull: false
     } 
 }, {
-    tableName: 'bicycles', //Nombre de la tabla en la base de datos.
-    timestamps: false //Para deshabilitar los campos createdAt y updatedAt.
+    tableName: 'bicycles',
+    timestamps: false
 });
 
 export default BicycleModel;

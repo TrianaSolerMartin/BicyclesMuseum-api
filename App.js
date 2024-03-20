@@ -3,12 +3,14 @@ import BicycleModel from "./models/BicycleModel.js";
 import express from 'express';
 import { PORT } from "./config.js";
 import BicycleRouter from './routers/BicycleRouter.js'
+import cors from 'cors'
 
 
 
 export const app = express();
 
 app.use(express.json())
+app.use(cors())
 
 app.use('/api', BicycleRouter)
 
