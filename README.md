@@ -23,7 +23,7 @@
 
 ## Descripción
 
-Tomando como referencia nuestro proyecto "Museo de Bicicletas" que es una aplicación web desarrollada con React, que te traslada al fascinante mundo de las bicicletas, hemos desarrollado nuestra API para el almacenamiento de datos con MySQL, NODE y Express, entre otras tecnologías, para un mejor manejo de errores (con Jest y Supertest).
+Tomando como referencia nuestro proyecto "Museo de Bicicletas" que es una aplicación web desarrollada con React, que te traslada al fascinante mundo de las bicicletas, hemos desarrollado nuestra API para el almacenamiento de datos con MySQL, NODE y Express, entre otras tecnologías, para un mejor manejo de errores, con Jest y Supertest.
 
 ## Instalación
 
@@ -36,23 +36,23 @@ Para comenzar a explorar este maravilloso back-end del Museo de bicicletas en tu
 
 **Las dependencias instaladas:**
 
-```npm install cors@^2.8.5```
+```cors@^2.8.5```
 
-```npm install cross-env@^7.0.3```
+```cross-env@^7.0.3```
 
-```npm install dotenv@^16.4.5```
+```dotenv@^16.4.5```
 
-```npm install express@^4.18.3```
+```express@^4.18.3```
 
-```npm install express-validator@^7.0.1```
+```express-validator@^7.0.1```
 
-```npm install jest@^29.7.0```
+```jest@^29.7.0```
 
-```npm install mysql2@^3.9.2```
+```mysql2@^3.9.2```
 
-```npm install sequelize@^6.37.1```
+```sequelize@^6.37.1```
 
-```npm install supertest@^6.3.4```
+```supertest@^6.3.4```
 
 La aplicación estará disponible en http://localhost:5173/
 
