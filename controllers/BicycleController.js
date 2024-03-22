@@ -1,4 +1,3 @@
-// import { request, response } from 'express';
 import BicycleModel from '../models/BicycleModel.js'
 
 export const getAllBicycles = async (request, response) => {
@@ -27,7 +26,7 @@ export const deleteBicycle = async (request, response) => {
 }
 export const createBicycle = async (request, response) => {
     try {
-        // const{model,speed,frame,electric,image} = request.body;
+        
         const newBicycle = await BicycleModel.create(request.body);
 
         response.status(201).json({ success: true, data: newBicycle, message: 'Bicicleta creada con éxito' });

@@ -24,7 +24,7 @@ const BicycleModel = connection_db.define('Bicycle', {
         type: DataTypes.BOOLEAN,
     },
     image: {
-        type: DataTypes.STRING, // Debería ser suficientemente grande para almacenar la URL de la imagen
+        type: DataTypes.STRING, 
         allowNull: false
     } 
 }, {

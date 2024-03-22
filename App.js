@@ -15,11 +15,9 @@ app.use(cors())
 app.use('/api', BicycleRouter)
 
 try {
-  // Autenticar la conexión
   await connection_db.authenticate();
   console.log('❤️❤️❤️ Connection has been established successfully.');
 
-  // Sincronizar el modelo BicycleModel con la base de datos
   await BicycleModel.sync();
   console.log('✅ BicycleModel has been synchronized with the database.');
 
