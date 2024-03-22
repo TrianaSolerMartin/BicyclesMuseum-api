@@ -32,7 +32,7 @@ Para comenzar a explorar este maravilloso back-end del Museo de bicicletas en tu
 1. **Clona el siguiente repositorio**
    
    ```bash
-   git clone https://github.com/TrianaSolerMartin/BicyclesMuseum-api.git
+   git clone https://github.com/TrianaSolerMartin/BicyclesMuseum-api.git 
 
 **Las dependencias instaladas:**
 
