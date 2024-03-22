@@ -4,13 +4,13 @@ import { app, server } from '../App.js';
 import connection_db from '../database/connection_db.js';
 import BicycleModel from '../models/BicycleModel.js';
 
-const api = request(app); //request nos permite hacer solicitudes a la app
+const api = request(app); 
 
 describe('Testing CRUD Bicycles', () => {
 
     test("Response body must be an array and then show 200 status", async()=>{
         const response = await api.get('/api');
-        expect(Array.isArray(response.body)).toBe(true); //que objeto quiero recibir, modificar
+        expect(Array.isArray(response.body)).toBe(true); 
         expect(response.status).toBe(200);
     });
 
@@ -46,12 +46,7 @@ describe('Testing CRUD Bicycles', () => {
             expect(response.headers['content-type']).toContain('json');
         });
 
-        // test('should return a message bicycle deleted successfully', async () => {
-        //     expect(response.body.message).toContain("Bicycle has been delete successfully!");
-        //     const findBicycle = await BicycleModel.findOne({where:{ id: createdBicycle.id}});
-        //     expect(findBicycle).toBeNull();
-        // })
-
+     
         afterAll(async() =>{
             await BicycleModel.destroy({where:{ id: createdBicycle.id}})
         })
