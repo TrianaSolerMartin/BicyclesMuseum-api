@@ -1,13 +1,8 @@
-<<<<<<< HEAD
-import request from "supertest";
-import { app } from '../App.js';
-=======
 import require  from 'express';
 import request from 'supertest';
 import { app, server } from '../App.js'; 
 import connection_db from '../database/connection_db.js';
 import BicycleModel from '../models/BicycleModel.js';
->>>>>>> develop
 
 const api = request(app);
 
@@ -21,43 +16,6 @@ describe('Testing CRUD bicycle', () => {
 
     test('POST /api', async () => {
         const response = await api.post('/api').send({
-<<<<<<< HEAD
-            "model": "test",
-            "speed": "2",
-            "frame": "test",
-            "electric": "0",
-            "image": "www.wikipedia.com"
-        });
-        expect(typeof response.body).toBe('object');
-        expect(response.status).toBe(201);
-    });
-
-    test('GETONE /api/:id', async () => {
-        const response = await api.get('/api/2'); 
-        expect(typeof response.body).toBe('object');
-        expect(response.status).toBe(200);
-    });
-
-    test('PUT /api/:id', async () => {
-        const response = await api.put('/api/3').send({
-            "model": "updatedTest",
-            "speed": 3,
-            "frame": "updatedTest",
-            "electric": false,
-            "image": "www.updatedwikipedia.com"
-        });
-        expect(typeof response.body).toBe('object');
-        expect(response.status).toBe(200);
-    });
-
-    test('DELETE /api/id', async () => {
-        const response = await api.delete('/api/id'); 
-        expect(typeof response.body).toBe('object');
-        expect(response.status).toBe(200);
-    });
-
-});
-=======
                 "model": "Test",
                 "speeds": "5",
                 "frame": "test",
@@ -104,4 +62,3 @@ describe('Testing CRUD bicycle', () => {
         server.close();
     });
 })
->>>>>>> develop
